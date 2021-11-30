@@ -1,0 +1,22 @@
+<div class="container " *ngIf="plat"> 
+  <mat-card>
+    <mat-card-title>{{plat.nom}}</mat-card-title>
+    
+    <mat-card-content>
+      <p>This card indeterminates progress bar.</p>
+      <p>Prix: {{plat.prix}} DT</p>
+      <p>{{plat.description}}</p>
+      <img [src]="createImgPath(plat.image)" alt="profile picture" width="300" height="300">
+    </mat-card-content>
+    <mat-card-actions *ngIf="userDetails">
+      <p>Types des reservations:</p>
+      
+      
+      <button mat-raised-button color="primary" (click)="subCommande(userDetails.userName,userDetails.phoneNumber,plat.id)">commande</button>
+      <button mat-raised-button color="primary">livraison</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+
+

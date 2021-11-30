@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+
+  <div class="mr-auto mt-2 mt-lg-0">
+    <span><img src="/assets/img/logo.png" height=30 width=41></span>
+    <a mat-button routerLink="/accueil" routerLinkActive="active"><span class="fa fa-home fa-lg"></span> Home</a>
+    <a mat-button routerLink="/nav/profil" routerLinkActive="active"><span class="fa fa-info fa-lg"
+        routerLinkActive="active"></span> Profil</a>
+    <a mat-button routerLink="/nav/plats" routerLinkActive="active"><span class="fa fa-list fa-lg"></span> Menu</a>
+    <a mat-button routerLink="/nav/drinks" routerLinkActive="active"><span class="fa fa-address-card fa-lg"></span> Our
+      drinks</a>
+  </div>
+  <div class="my-2 my-sm-0">
+    <span class="flex-spacer"></span>
+    <a mat-raised-button color="warn" (click)="onLogout()"><span class="fa fa-sign-in fa-lg"></span> Logout</a>
+  </div>
+
+
+</mat-toolbar>
+
+
+
+
+
+
+<router-outlet></router-outlet>
