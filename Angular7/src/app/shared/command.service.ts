@@ -11,13 +11,20 @@ export class CommandService {
   readonly BaseURI = 'https://localhost:44319/api';
 
 
-  PostCommande( nomUser,phoneNumber,platsId,myDate = new Date()) {
+  getCommands(){
+    
+    return this.http.get(this.BaseURI+ '/commandes');
+  }
+
+
+  PostCommande( nomUser,phoneNumber,platsId,platName,myDate = new Date()) {
     
     var body = {
       nomUser: nomUser,    
       dateCommande:myDate ,
       phoneNumber: phoneNumber,
-      platsId: platsId
+      platsId: platsId,
+      platName: platName
     
     };
     return this.http.post(this.BaseURI + '/commandes', body);

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig, MAT_DIALOG_DATA } from '@angular/material';
 import { Router } from '@angular/router';
+import { ModifierPlatComponent } from 'src/app/nav/modifier-plat/modifier-plat.component';
 import { PlatsService } from 'src/app/shared/plats.service';
 import { UserService } from 'src/app/shared/user.service';
 import { AjouterplatsComponent } from '../ajouterplats/ajouterplats.component';
@@ -15,7 +16,8 @@ export class PlatsComponent implements OnInit {
 
   constructor(private router:Router,private service:PlatsService,private uService:UserService,public dialog: MatDialog) { }
   platsDetalis;
-  platsbyid
+  platsbyid;
+  public response: {dbPath: ''}
   ngOnInit() {
     this.service.getPlats().subscribe(
       res =>{
@@ -57,7 +59,7 @@ export class PlatsComponent implements OnInit {
 }
 
 onEdit(d){
-  this.service.editPlat(d).subscribe(
+  this.service.editPlat(d,this.response.dbPath).subscribe(
     (res: any) => {
       
      
@@ -100,6 +102,24 @@ openDialog(id) {
     console.log(`Dialog result: ${result}`);
   });
 }
+
+openModifier(id) {
+
+  const dialogRef =  this.dialog.open(ModifierPlatComponent, {
+    //width: '50%',
+    //height: '50%',
+    data: { platId: id}
+  });
+  dialogRef.afterClosed().subscribe(result => {
+    console.log(`Dialog result: ${result}`);
+  });
+}
+
+public uploadFinished = (event) => {
+  this.response = event;
+}
+
+
 
 ajouterDialog() {
   const dref= this.dialog.open(AjouterplatsComponent);

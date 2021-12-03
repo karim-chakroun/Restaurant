@@ -37,13 +37,13 @@ export class PlatsService {
     return this.http.delete(this.BaseURI+ '/plats/' + id);
   }
 
-  editPlat(d){
+  editPlat(d,imgPath){
     var body = {
       id : d,
       nom: this.formModel.value.Nom,    
       description:this.formModel.value.Description,
       prix:this.formModel.value.Prix,
-      image:"this.formModel.value.Image"
+      image:imgPath
     
     };
     

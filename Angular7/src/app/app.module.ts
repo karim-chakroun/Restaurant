@@ -34,6 +34,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { UploadComponent } from './nav/upload/upload.component';
 import { MatListModule } from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
+import { CommandsComponent } from './nav/commands/commands.component';
+import { ModifierPlatComponent } from './nav/modifier-plat/modifier-plat.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -51,10 +54,13 @@ import {MatIconModule} from '@angular/material/icon';
     AjouterDrinkComponent,
     DrinksComponent,
     ShowPlatsComponent,
-    UploadComponent
+    UploadComponent,
+    CommandsComponent,
+    ModifierPlatComponent
   ],
   imports: [
     BrowserModule,
+    MatSelectModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -79,6 +85,6 @@ import {MatIconModule} from '@angular/material/icon';
   }
   ],
   bootstrap: [AppComponent],
-  entryComponents:[PlatsComponent,ShowPlatsComponent]
+  entryComponents:[PlatsComponent,ShowPlatsComponent,ModifierPlatComponent]
 })
 export class AppModule { }

@@ -44,8 +44,8 @@ plat:any
     );
   }
 
-  subCommande(nomUser,phoneNumber,platsId){
-    this.cService.PostCommande(nomUser,phoneNumber,platsId).subscribe(
+  subCommande(nomUser,phoneNumber,platsId,platName){
+    this.cService.PostCommande(nomUser,phoneNumber,platsId,platName).subscribe(
       (res: any) => {
         
           

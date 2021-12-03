@@ -5,6 +5,7 @@ import { AgentPanelComponent } from './agent-panel/agent-panel.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AjouterDrinkComponent } from './nav/ajouter-drink/ajouter-drink.component';
 import { AjouterplatsComponent } from './nav/ajouterplats/ajouterplats.component';
+import { CommandsComponent } from './nav/commands/commands.component';
 import { DrinksComponent } from './nav/drinks/drinks.component';
 import { NavComponent } from './nav/nav.component';
 import { PlatsComponent } from './nav/plats/plats.component';
@@ -26,7 +27,7 @@ const routes: Routes = [
 },
 {path:'nav',component:NavComponent,canActivate:[AuthGuard],
 children: [
-  { path: 'plats', component: PlatsComponent },{ path: 'profil', component: ProfilComponent },{ path: 'ajouterplats', component: AjouterplatsComponent ,canActivate:[AuthGuard],data :{permittedRoles:['Agent'] }},{ path: 'ajouter-drink', component: AjouterDrinkComponent ,canActivate:[AuthGuard],data :{permittedRoles:['Agent'] }},{ path: 'drinks', component: DrinksComponent }]
+  { path: 'plats', component: PlatsComponent },{ path: 'profil', component: ProfilComponent },{ path: 'ajouterplats', component: AjouterplatsComponent ,canActivate:[AuthGuard],data :{permittedRoles:['Agent'] }},{ path: 'commands', component: CommandsComponent ,canActivate:[AuthGuard],data :{permittedRoles:['Agent'] }},{ path: 'ajouter-drink', component: AjouterDrinkComponent ,canActivate:[AuthGuard],data :{permittedRoles:['Agent'] }},{ path: 'drinks', component: DrinksComponent }]
 },
 {path:'agentpanel',component:AgentPanelComponent,canActivate:[AuthGuard],data :{permittedRoles:['Agent']}}
 ];
